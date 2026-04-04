@@ -1,0 +1,142 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    padding: 0 20px;
+    width: 100%;
+    background: linear-gradient(180deg, #61a60e 0%, #a2d85f 100%);
+}
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #D9D9D9;
+}
+footer {
+    display: flex;
+    padding: 0 20px;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(0deg, #000 9.49%, #88e48b 96.42%);
+    background-color: #000;
+    margin-top: auto;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    width: 70px;
+    height: 70px;
+}
+
+
+.title {
+    font-family: lilita one;
+    font-size: 36px;
+    color: #000;
+    text-decoration: none;
+}
+
+
+.youradtext {
+    background-color: #D9D9D9;
+    border-radius: 5px;
+    width: 370px;
+    height: 70px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 31px;
+    color: #000;
+}
+
+
+.settings-icon {
+    width: 65px;
+    height: 65px;
+}
+.blocks {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start;
+    padding: 20px;
+}
+.block1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 400px;
+    height: 500px;
+    background-color: #b5b2b2;
+    
+}
+.block2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 400px;
+    height: 500px;
+    gap: 11px;
+    padding-left: 15px;
+    background: linear-gradient(178deg, #97ffa3 0%, #008442 100%);
+    border-radius: 51px;
+    
+}
+.block3{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 400px;
+    height: 500px;
+    background-color: #b5b2b2;
+    
+}
+.moviecover{
+    width: 61px;
+    height: 91px;
+    justify-content: flex-start;
+    margin-right: 40px;
+}
+.movie-row {
+    display: flex;
+    align-items: center; 
+    gap: 10px; 
+}
+.footer-link{
+    text-decoration: none;
+    justify-content: flex-start;
+    color: #000;    
+    display: block;
+    gap: 5px;
+    font-size: 15px;
+}
+.moviefact{
+    color: #000;
+    font-size: 15px;
+    margin-left: auto;
+}
+.moviefactparent{
+    width:100%;
+    display: flex;
+}
+.footer-links{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+}
+.youradtextbody {
+    background-color: #b5b2b2;
+    border-radius: 5px;
+    width: 370px;
+    height: 70px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 31px;
+    color: #000;
+}
