@@ -2,7 +2,6 @@ const animeList = document.getElementById("animeList");
 const searchInput = document.getElementById("searchInput");
 const searchBtn = document.getElementById("searchBtn");
 
-// Вивід аніме на сторінку
 function displayAnime(animeArray) {
     animeList.innerHTML = "";
 
@@ -11,7 +10,6 @@ function displayAnime(animeArray) {
         return;
     }
 
-    // Берём только первые 8 аниме
     animeArray.slice(0, 8).forEach(anime => {
         const animeCard = document.createElement("div");
         animeCard.classList.add("movie-row");
@@ -31,7 +29,6 @@ function displayAnime(animeArray) {
     });
 }
 
-// Завантаження топ-аніме
 async function getTopAnime() {
     try {
         animeList.innerHTML = `<p class="loading-text">Завантаження топ-аніме...</p>`;
@@ -46,7 +43,6 @@ async function getTopAnime() {
     }
 }
 
-// Пошук аніме
 async function searchAnime() {
     const query = searchInput.value.trim();
 
@@ -68,15 +64,12 @@ async function searchAnime() {
     }
 }
 
-// Кнопка пошуку
 searchBtn.addEventListener("click", searchAnime);
 
-// Пошук по Enter
 searchInput.addEventListener("keydown", function (e) {
     if (e.key === "Enter") {
         searchAnime();
     }
 });
 
-// Автозавантаження при відкритті сайту
 getTopAnime();
