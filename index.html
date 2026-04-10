@@ -1,59 +1,127 @@
-<!DOCTYPE html>
-<html lang="uk">
-<head>
+<html lang="uk"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Logika movie</title>
+    <title>Logika Movie</title>
     <link rel="stylesheet" href="styles.css">
-    <body>
-    <nav class="container">
-        
-        <div class="left">
-            <a href="#"><img src="./images/theater.png" alt="Theater logo" class="logo-img"></a>
-            <a href="#" class="title">Logika movie</a>
-        </div>
-
-        <p class="youradtext">Тут могла бути ваша<br> реклама</p>
-
-        <div class="right">
-            <a href="#"><img src="./images/settings.png" alt="settings" class="settings-icon"></a>
-        </div>
-
-    </nav>
 </head>
 <body>
-<div class="blocks">
-    <div class="block1">
-        <p class="youradtextbody">Тут могла бути ваша<br> реклама</p>
-        <p class="youradtextbody">Тут могла бути ваша<br> реклама</p>
-        <p class="youradtextbody">Тут могла бути ваша<br> реклама</p>
-    </div>
 
-    <div class="block2">
-        <div class="movie-row">
-        <img src="./images/moviecover.jfif" class="moviecover">
-        <p style="color: white;">ФІЛЬМ ТА ОПИС ФІЛЬМУ<br> БЛАБЛАБЛАБЛАБЛАБАЛАБА<br>ЛАБЛА</p>
+    <header class="header-shell">
+        <nav class="container">
+            <div class="left">
+                <a href="#"><img src="./images/theater.png" alt="Theater logo" class="logo-img"></a>
+                <a href="#" class="title">Logika Movie</a>
+            </div>
+
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Пошук...">
+                <button id="searchBtn" type="button">🔍</button>
+            </div>
+
+            <div class="right">
+                <button class="filter-toggle" id="filterToggle" type="button" aria-expanded="false" aria-controls="filterPanel" aria-label="Відкрити фільтри">
+                    <img src="./images/settings.png" alt="" class="settings-icon">
+                </button>
+            </div>
+        </nav>
+
+        <section class="filter-panel" id="filterPanel" >
+            <div class="filter-panel-header">
+                <h2>Фільтри</h2>
+                <p>Виберіть параметри, щоб швидше знайти потрібне аніме.</p>
+            </div>
+
+            <div class="filter-grid">
+                <label class="filter-field">
+                    <span>Жанр</span>
+                    <select id="genreFilter">
+                        <option value="">Усі жанри</option>
+                    </select>
+                </label>
+
+                <label class="filter-field">
+                    <span>Мінімальний рейтинг</span>
+                    <select id="minScoreFilter">
+                        <option value="">Будь-який</option>
+                        <option value="5">Від 5</option>
+                        <option value="6">Від 6</option>
+                        <option value="7">Від 7</option>
+                        <option value="8">Від 8</option>
+                        <option value="9">Від 9</option>
+                    </select>
+                </label>
+
+                <label class="filter-field">
+                    <span>Тип</span>
+                    <select id="typeFilter">
+                        <option value="">Усі типи</option>
+                        <option value="tv">TV</option>
+                        <option value="movie">Movie</option>
+                        <option value="ova">OVA</option>
+                        <option value="ona">ONA</option>
+                        <option value="special">Special</option>
+                    </select>
+                </label>
+
+                <label class="filter-field">
+                    <span>Статус</span>
+                    <select id="statusFilter">
+                        <option value="">Будь-який</option>
+                        <option value="airing">Триває</option>
+                        <option value="complete">Завершено</option>
+                        <option value="upcoming">Очікується</option>
+                    </select>
+                </label>
+
+                <label class="filter-field">
+                    <span>Сортувати за</span>
+                    <select id="sortByFilter">
+                        <option value="score">Рейтингом</option>
+                        <option value="popularity">Популярністю</option>
+                        <option value="favorites">Улюбленими</option>
+                        <option value="members">Кількістю глядачів</option>
+                        <option value="title">Назвою</option>
+                        <option value="start_date">Датою виходу</option>
+                    </select>
+                </label>
+
+                <label class="filter-field">
+                    <span>Напрям сортування</span>
+                    <select id="sortDirectionFilter">
+                        <option value="desc">Спочатку більше</option>
+                        <option value="asc">Спочатку менше</option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="filter-actions">
+                <button type="button" class="filter-btn filter-btn-secondary" id="resetFiltersBtn">Скинути</button>
+                <button type="button" class="filter-btn filter-btn-primary" id="applyFiltersBtn">Застосувати</button>
+            </div>
+        </section>
+    </header>
+
+    <main class="blocks">
+        <div class="block2" id="animeList">
+            <p class="loading-text">Завантаження аніме...</p>
         </div>
-        <img src="./images/moviecover.jfif" class="moviecover">
-        <img src="./images/moviecover.jfif" class="moviecover">
-        <img src="./images/moviecover.jfif" class="moviecover">
-        <img src="./images/moviecover.jfif" class="moviecover">
-    </div>
+    </main>
 
-    <div class="block3">
-        <p class="youradtextbody">Тут могла бути ваша<br> реклама</p>
-        <p class="youradtextbody">Тут могла бути ваша<br> реклама</p>
-        <p class="youradtextbody">Тут могла бути ваша<br> реклама</p>
-    </div>
-</div>
-</body>
-<footer>
-    <p class="footer-links">
-        <a href="#" class="footer-link">звязок з нами</a>
-        <a href="#" class="footer-link">наша<br> команда</a>
-    </p>
-    <div class="moviefactparent">
-    <p class="moviefact">Першим українським національним ігровим фільмом<br> вважається «Запорозька Січ», знятий у 1911 році</p>
-    </div>
-</footer>
-</html>
+    <footer>
+        <div class="footer-links">
+            <a href="#" class="footer-link">зв'язок з нами</a>
+            <a href="#" class="footer-link">наша команда</a>
+        </div>
+
+        <div class="moviefactparent">
+            <p class="moviefact">
+                Першим українським національним ігровим фільмом
+                вважається «Запорозька Січ», знятий у 1911 році
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+
+</body></html>
