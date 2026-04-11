@@ -373,3 +373,16 @@ footer {
         text-align: center;
     }
 }
+.title:hover {
+  animation: rainbow 3s linear infinite;
+}
+
+@keyframes title {
+  0%   { color: #ff0000; }
+  16%  { color: #ff7f00; }
+  33%  { color: #ffff00; }
+  50%  { color: #00ff00; }
+  66%  { color: #0000ff; }
+  83%  { color: #4b0082; }
+  100% { color: #8b00ff; }
+}
