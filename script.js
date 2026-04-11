@@ -54,7 +54,10 @@ async function searchAnime() {
     try {
         animeList.innerHTML = `<p class="loading-text">Пошук...</p>`;
 
-        const response = await fetch(`https://api.jikan.moe/v4/anime?q=${encodeURIComponent(query)}`);
+        const response = await fetch(
+            `https://api.jikan.moe/v4/anime?q=${encodeURIComponent(query)}&order_by=score&sort=desc`
+        );
+
         const result = await response.json();
 
         displayAnime(result.data);
