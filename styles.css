@@ -219,7 +219,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 800px;
+    max-width: 900px;
     min-height: 500px;
     gap: 15px;
     padding: 20px;
