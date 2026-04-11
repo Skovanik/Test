@@ -89,6 +89,21 @@ function buildSynopsisText(anime) {
     return `${anime.synopsis.slice(0, 140)}...`;
 }
 
+function applyLocalFilters(animeArray, filters) {
+    let filteredAnime = Array.isArray(animeArray) ? [...animeArray] : [];
+
+    if (filters.minScore) {
+        const minScoreValue = Number(filters.minScore);
+
+        filteredAnime = filteredAnime.filter((anime) => {
+            const animeScore = Number(anime.score);
+            return Number.isFinite(animeScore) && animeScore >= minScoreValue;
+        });
+    }
+
+    return filteredAnime;
+}
+
 function displayAnime(animeArray) {
     animeList.innerHTML = "";
 
@@ -142,7 +157,7 @@ async function loadAnime() {
     const query = searchInput.value.trim();
     const filters = getSelectedFilters();
     const params = new URLSearchParams({
-        limit: "12",
+        limit: "25",
         sfw: "true",
         page: "1",
         order_by: filters.sortBy,
@@ -179,7 +194,8 @@ async function loadAnime() {
         }
 
         const result = await response.json();
-        displayAnime(result.data || []);
+        const filteredResults = applyLocalFilters(result.data || [], filters);
+        displayAnime(filteredResults);
     } catch (error) {
         setLoadingState("Помилка завантаження 😢");
         console.error("Помилка API:", error);
