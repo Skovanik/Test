@@ -374,7 +374,7 @@ footer {
     }
 }
 .title:hover {
-  animation: rainbow 3s linear infinite;
+  animation: title 3s linear infinite;
 }
 
 @keyframes title {
