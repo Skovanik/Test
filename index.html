@@ -1,4 +1,6 @@
-<html lang="uk"><head>
+<!DOCTYPE html>
+<html lang="uk">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Logika Movie</title>
@@ -19,13 +21,20 @@
             </div>
 
             <div class="right">
-                <button class="filter-toggle" id="filterToggle" type="button" aria-expanded="false" aria-controls="filterPanel" aria-label="Відкрити фільтри">
+                <button
+                    class="filter-toggle"
+                    id="filterToggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="filterPanel"
+                    aria-label="Відкрити фільтри"
+                >
                     <img src="./images/settings.png" alt="" class="settings-icon">
                 </button>
             </div>
         </nav>
 
-        <section class="filter-panel" id="filterPanel" >
+        <section class="filter-panel" id="filterPanel" aria-hidden="true">
             <div class="filter-panel-header">
                 <h2>Фільтри</h2>
                 <p>Виберіть параметри, щоб швидше знайти потрібне аніме.</p>
@@ -122,6 +131,5 @@
     </footer>
 
     <script src="script.js"></script>
-
-
-</body></html>
+</body>
+</html>
