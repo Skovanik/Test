@@ -45,10 +45,13 @@ body {
 }
 
 .title {
+    display: inline-block;
     font-size: 36px;
     color: #000;
     text-decoration: none;
     font-weight: bold;
+    position: relative;
+    transition: transform 0.25s ease, filter 0.25s ease, color 0.25s ease;
 }
 
 .search-box {
@@ -374,15 +377,34 @@ footer {
     }
 }
 .title:hover {
-  animation: title 3s linear infinite;
+    color: transparent;
+    background: linear-gradient(
+        90deg,
+        #ffffff 0%,
+        #d7ff7a 18%,
+        #7fffd4 35%,
+        #fef08a 52%,
+        #8bff9e 70%,
+        #ffffff 100%
+    );
+    background-size: 300% 100%;
+    background-position: 0% 50%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: title-shimmer 2.2s ease-in-out infinite;
+    transform: translateY(-1px);
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.25));
 }
 
-@keyframes title {
-  0%   { color: #ff0000; }
-  16%  { color: #ff7f00; }
-  33%  { color: #ffff00; }
-  50%  { color: #00ff00; }
-  66%  { color: #0000ff; }
-  83%  { color: #4b0082; }
-  100% { color: #8b00ff; }
+@keyframes title-shimmer {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
