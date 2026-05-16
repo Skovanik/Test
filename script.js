@@ -218,7 +218,13 @@ resetFiltersBtn.addEventListener("click", async () => {
     await loadAnime();
 });
 
-searchBtn.addEventListener("click", loadAnime);
+searchBtn.addEventListener("click", () => {
+    if (typeof gtag === "function") {
+        gtag("event", "click_search_btn");
+    }
+
+    loadAnime();
+});
 
 searchInput.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
